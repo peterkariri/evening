@@ -1,0 +1,66 @@
+<!-- //event is an occurrence of something initiated by the user (click,mousehover)
+//event handler refrs to the function that handles the event (what to do once the event has occureed)
+/even delegation>>removing redundancy from every elemt having its on evebt handler 
+//event propagation>>where an event gors top bottom (from parent to child)
+//event bubbling (event goes from child to parent) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handling</title>
+    <style>
+        .myBox{
+            background-color: yellow;
+            width: 10%;
+            padding: 40px;
+            margin: 30px auto;
+            font-size: 27px;
+        }
+    </style>
+</head>
+<body>
+     <div class="myBox" id="boxy">
+        <p>dont you dare</p>
+     </div>
+
+     <button type="submit" id="myButton">Click Me</button>
+
+     <script>
+          let myBox=document.getElementById("boxy")
+          let myButton=document.getElementById("myButton")
+
+     /*      //passing a function as a callback function 
+
+function findAttribute(){
+    console.log(myBox.getAttribute("class"))
+}
+
+          myBox.addEventListener(event,findAttribute) */
+
+       myBox.addEventListener("click",(e)=>{
+         e.target.style.backgroundColor="green"
+         e.target.textContent="helllo you clicked me "
+
+       })
+       
+       myBox.addEventListener("mouseover",(e)=>{
+         e.target.style.backgroundColor="black"
+         e.target.textContent="helllo winnie "
+
+       })
+       
+       myBox.addEventListener("mouseout",(e)=>{
+         e.target.style.backgroundColor="purple"
+         e.target.textContent="Hello Eustus "
+
+       })
+      
+       //event delegation   
+
+       
+
+     </script>
+</body>
+</html>
