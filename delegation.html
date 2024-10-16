@@ -37,25 +37,24 @@ function findAttribute(){
     console.log(myBox.getAttribute("class"))
 }
 
-          myBox.addEventListener(event,findAttribute) */
+          myBox.addEventListener(event,callback function) */
+        myBox.addEventListener("click",(event)=>{
+         event.target.style.backgroundColor="green"
+         event.target.textContent="helllo you clicked me "
 
-       myBox.addEventListener("click",(e)=>{
-         e.target.style.backgroundColor="green"
-         e.target.textContent="helllo you clicked me "
-
-       })
+       }) 
        
        myBox.addEventListener("mouseover",(e)=>{
-         e.target.style.backgroundColor="black"
-         e.target.textContent="helllo winnie "
+         e.target.style.backgroundColor="red"
+         e.target.textContent="helllo faith "
 
        })
        
-       myBox.addEventListener("mouseout",(e)=>{
+        myBox.addEventListener("mouseout",(e)=>{
          e.target.style.backgroundColor="purple"
          e.target.textContent="Hello Eustus "
 
-       })
+       })  
       
        //event delegation   
 

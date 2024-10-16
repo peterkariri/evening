@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .one {
+        background-color: blue;
+        width: 50%;
+        padding: 40px;
+      }
+      .two {
+        background-color: red;
+        width: 35%;
+        padding: 30px;
+      }
+      .three {
+        background-color: green;
+        width: 50%;
+        padding: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="outerDiv" class="one">
+      1
+      <div id="innerDiv" class="two">
+        2
+        <button id="myButton" class="three">Click Me</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("outerDiv").addEventListener(
+        "click",
+        function () {
+          alert("Outer DIV clicked");
+        },
+        false
+      );
+
+      document.getElementById("innerDiv").addEventListener(
+        "click",
+        function () {
+          alert("Inner DIV clicked");
+        },
+        false
+      );
+
+      document.getElementById("myButton").addEventListener(
+        "click",
+        function () {
+          alert("Button clicked");
+        },
+        false
+      );
+
+      //stopping propagation of bubble
+      document.getElementById("myButton").addEventListener(
+        "click",
+        function (event) {
+          alert("Button clicked version , but event won't bubble up");
+          event.stopPropagation(); // Stops the event from propagating further
+        },
+        false
+      );
+      //assignment >>buuble through the divs changin the color on clic of the button 
+      
+    </script>
+  </body>
+</html>
